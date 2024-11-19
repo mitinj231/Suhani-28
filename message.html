@@ -1,0 +1,1004 @@
+<html>
+
+<head>
+    <title>Happy Birthday</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+    <style>
+      
+
+      
+
+        .wrapper {
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 20px;
+            border: 1px solid #fff;
+            background-color: rgba(255, 255, 255, 0.5);
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            text-align:center;
+            transition: box-shadow 0.3s ease, transform 0.3s ease;
+        }
+        .wrapper:hover {
+    box-shadow: 0 0 20px 10px rgba(210, 254, 251, 0.6); /* Pink glow */
+    transform: scale(1.02); /* Slight zoom effect */
+}
+        h1, h2 {
+            margin: 0;
+            line-height: 1.25;
+        }
+
+        .aboutthedata {
+            padding-bottom: 20px;
+            border-bottom: 4px dotted;
+            font-size:2.4rem;
+            text-transform: uppercase;
+            text-shadow: 0.5px 0.1px #fffcf5, 1px 2px;
+            
+        }
+
+        h2 {
+            margin-top: 40px;
+            font-size: 1.5rem;
+        }
+
+        canvas {
+            position: fixed;
+            z-index: -3;    
+            top: 0;
+            left: 0;
+        }
+
+        @media screen and (min-width: 450px) {
+            h1 {
+                font-size: 4rem;
+            }
+            h2 {
+                font-size: 2rem;
+            }
+        }
+  .both{
+    display: flex;
+    justify-content: center;
+
+  }
+  .main_content{
+    color: rgb(153, 0, 170);
+
+  }
+.data{
+    color: rgb(153, 0, 170);
+}
+.thank{
+    color: rgb(153, 0, 170);
+}
+.final{
+    color: rgb(153, 0, 170);
+
+}
+.once{
+    color: rgb(153, 0, 170);
+}
+  .both>div{
+            font-size: x-large;
+            font-weight: bold;
+            background: linear-gradient(204deg, rgb(31, 207, 195) 0.00%, rgb(31, 145, 207) 100.00%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+  }
+
+        .videopart {
+
+            /* margin-left: 5%; */
+            display: flex;
+            justify-content: center;
+            width: 90%;
+
+            margin-top: 200px;
+            margin: auto;
+
+            /* position: absolute; */
+        }
+        .my_image{
+            z-index: 10;
+        }
+        .video1 {
+            box-shadow: 2px 2px 200px 5px rgb(96, 77, 0);
+            border-radius: 20px;
+            overflow: hidden;
+            margin-top: 200px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .video2{
+            box-shadow: 2px 2px 200px 5px rgb(96, 77, 0);
+            border-radius: 20px;
+            overflow: hidden;
+            margin-top: 200px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        /* Container styling */
+        /* body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background: linear-gradient(135deg, #f5a623, #fbc08d);
+    font-family: Arial, sans-serif;
+} */
+
+        .name-container {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            animation: float 3s infinite ease-in-out alternate;
+            /* Floating effect */
+        }
+
+        /* Individual letter styling */
+        .letter {
+            font-size: 12vw;
+            /* Large text */
+            font-weight: bold;
+            background: linear-gradient(45deg, #5a57ff, #ff00ff, #ff0000, #ff6347);
+            -webkit-background-clip: text;
+            color: transparent;
+            position: relative;
+            transition: transform 0.3s ease, filter 0.3s ease;
+            cursor: pointer;
+            text-shadow: 0 0 15px rgba(255, 255, 255, 0.8);
+            /* Sparkle glow */
+        }
+
+        /* Hover effect for each letter */
+        .letter:hover {
+            transform: scale(1.2) rotate(5deg);
+            /* Slight rotation */
+            filter: drop-shadow(0 0 10px #ffd700) drop-shadow(0 0 20px #ff6347);
+            /* Enhanced sparkle */
+        }
+
+        .FALTU {
+           
+            display: flex;
+            justify-content: center;
+        }
+
+        /* Tooltip styling */
+
+
+        /* Tooltip styling */
+        .letter::after {
+            content: attr(data-tooltip);
+            /* Display the tooltip text */
+            position: absolute;
+            top: -80px;
+            left: 50%;
+            transform: translateX(-50%);
+            padding: 10px;
+            font-size: 2vw;
+            background-color: rgba(0, 0, 0, 0.8);
+            color: #ffffff;
+            border-radius: 8px;
+            opacity: 0;
+            transition: opacity 0.3s ease, top 0.3s ease;
+            white-space: pre-wrap;
+            /* Allows line breaks */
+            pointer-events: none;
+            box-shadow: 0 0 8px rgba(253, 133, 255, 0.6);
+        }
+
+        /* Show tooltip on hover */
+        .letter:hover::after {
+            opacity: 1;
+            top: -100px;
+            /* Move tooltip upwards on hover */
+        }
+
+        /* Show tooltip on hover */
+        .letter:hover::after {
+            opacity: 1;
+            top: -100px;
+        }
+
+        .strikethrough {
+            text-decoration: line-through;
+            /* Creates a line through the text */
+            color: #ffffff;
+            /* You can adjust the color to fit your design */
+        }
+
+        .black {
+            height: 100%;
+            width: 100%;
+            background-color: red;
+        }
+
+        /* Floating animation */
+        @keyframes float {
+            from {
+                transform: translateY(0);
+            }
+
+            to {
+                transform: translateY(-10px);
+            }
+        }
+
+        .part4 {
+            display: flex;
+            justify-content: center;
+            margin-top: 100px;
+            color: rgb(255, 0, 242);
+            text-shadow: 2px 2px 20px #5a57ff;
+        }
+
+        .video1:hover {
+            transform: scale(1.05);
+            /* Slightly enlarge the video on hover */
+            box-shadow: 2px 2px 200px 10px rgba(255, 165, 0, 0.7);
+            /* Enhance shadow color and size */
+            cursor: pointer;
+            /* Change cursor to indicate interactivity */
+        }
+
+        @media (min-width:480px) {
+            .scroll-down {
+                font-size: 1rem;
+            }
+        }
+
+        @media(max-width:439px) {
+            .scroll-down {
+                font-size: 1rem;
+            }
+        }
+
+        .scroll-down {
+            /* Adjust font size as needed */
+            font-weight: bold;
+            /* Make it bold */
+            color: transparent;
+            /* Hide the text color */
+            background: linear-gradient(90deg, #ff007a, #ffb347);
+            /* Gradient effect */
+            background-clip: text;
+            /* Clip the background to the text */
+            -webkit-background-clip: text;
+            /* For Safari */
+            animation: bounce 2s infinite;
+            /* Bounce animation */
+            text-align: center;
+            /* Center the text */
+            margin-top: 50px;
+            /* Space above the text */
+            position: relative;
+            /* Position for pseudo-element */
+        }
+
+        .scroll-down::after {
+            content: '';
+            /* Empty content for underline */
+            display: block;
+            width: 60%;
+            /* Width of the underline */
+            height: 5px;
+            /* Height of the underline */
+            background: #ff007a;
+            /* Color of the underline */
+            margin: 10px auto;
+            /* Center the underline */
+            animation: wave 2s infinite;
+            /* Wave animation */
+        }
+
+        /* Bounce animation */
+        @keyframes bounce {
+
+            0%,
+            20%,
+            50%,
+            80%,
+            100% {
+                transform: translateY(0);
+            }
+
+            40% {
+                transform: translateY(-20px);
+            }
+
+            60% {
+                transform: translateY(-10px);
+            }
+        }
+
+        /* Wave animation for the underline */
+        @keyframes wave {
+
+            0%,
+            100% {
+                transform: scaleX(1);
+            }
+
+            50% {
+                transform: scaleX(1.2);
+                /* Scale effect */
+            }
+        }
+        @media (max-width:800px) {
+            .video1{
+                display: none;
+            }
+        }
+        @media (min-width:801px) {
+            .video2{
+                display: none;
+            }
+        }
+        #tapToSeeBtn {
+    background-color: #ff69b4; /* Pink color */
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    font-size: 18px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+    font-family: Arial, sans-serif;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+#tapToSeeBtn:hover {
+    background-color: #ff1493; /* Darker pink on hover */
+    transform: scale(1.05);
+}
+
+/* Image fade-in effect */
+#sleepImage {
+    display: none;
+    width: 100%; /* Adjust the size as needed */
+    max-width: 500px;
+    margin-top: 20px;
+    opacity: 0;
+    animation: fadeIn 1s forwards;
+}
+.go{
+    display: flex;
+    justify-content: center;
+    
+}
+#sleepImage{
+    border-radius: 10%;
+    /* margin-top: -50px; */
+    margin-top: -70px;
+
+}
+
+/* Keyframes for fade-in animation */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Zeyada&display=swap');
+
+
+
+
+.finaltheta {
+    height: 100vh;
+  
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background-size: 1000px;
+  /* background-image: url("https://tse4.mm.bing.net/th?id=OIP.zpoNuomiihvgWMEQR4KfoQHaEK&pid=Api&P=0&h=180"); */
+
+  /* background-position: center center; */
+  /* border: solid black 10px; */
+  /* background-color: red; */
+}
+
+.paper {
+  background-image: url("https://image.freepik.com/free-vector/decorative-vintage-white-design-background_1017-27562.jpg");
+  
+  background-size: 500px;
+  background-position: center center;
+  padding: 20px 100px;
+ /* min-width: 800px; */
+  
+  transform: rotateZ(-5deg);
+  box-shadow: 1px 15px 20px 0px rgba(0,0,0,0.5);
+  
+  position: absolute;
+}
+
+.paper.heart {
+  position: relative;
+  width: 200px;
+  height: 200px;
+  padding: 0;
+  border-radius: 50%;
+}
+
+.paper.image {
+  padding: 10px;
+}
+.paper.image p {
+  font-size: 30px;
+}
+
+.finaltheta img {
+/* width: 40x;  */
+max-height: 250px;
+   width: 70%;
+
+  /* object-fit:fill; */
+  /* height: 100px; */
+  user-select: none;
+}
+
+.paper.heart::after {
+  content: "";
+  background-image: url('https://static.vecteezy.com/system/resources/previews/036/304/666/original/gold-3d-number-19-png.png');
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-size: 150px;
+  background-position: center center;
+  background-repeat: no-repeat;
+  opacity: 0.6;
+}
+
+.finaltheta p {
+  font-family:cursive;
+  font-size: 35px;
+  color: rgb(0,0,100);
+  opacity: 0.75;
+  user-select: none;
+  
+  /* // filter: drop-shadow(2px 1.5px 1px rgba(0,0,105,0.9)); */
+}
+@media (max-width:750px) {
+
+    .chappu{
+    display: none;
+    background-color: red;
+}
+
+}
+.special{
+padding: 30px 50px 50px 40px;
+text-align: center;
+    background-image: url("https://i.pinimg.com/originals/72/b2/4f/72b24f7c9fb377bb8807d46df78228ce.jpg");
+}
+
+
+
+
+
+    </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/matter-js/0.17.1/matter.min.js"></script>
+    <!-- matter-wrap plugin -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/matter-js/0.17.1/plugins/matter-wrap.min.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="loader">
+                
+                <button id="play">
+                    <p class="theta">
+                        Let's Begin <br>
+                        <span class="an">Tap to Enjoy</span>
+                    </p>
+
+                </button>
+                
+            </div>
+            
+        </div>
+    
+    </div>
+    <audio class="song" controls loop>
+        <source src="music.mp3">
+        </source>
+        Your browser isn't invited for super fun audio time.
+    </audio>
+    <canvas id="confetti"></canvas>
+    <div class="main">
+        <div class="container pt-5">
+            <div class="row">
+
+                <div class="col-12 col-xl-6 mx-auto">
+                    <img src="img/banner.png" alt="">
+                </div>
+
+                <div class="col-12  text-center">
+                    <div id="name" class="area">Suhani</div>
+                </div>
+
+                <div class="col-12 text-center">
+                    <div class="type-wrap">
+                        <div id="typed-strings" class="typing">
+                            <h2>
+                                Hii 19 saal ki Suhani!
+                            </h2>
+
+                            <h5>
+                                May your day be filled with 🎉😊
+                            </h5>
+                            <h5>
+                                laughter,love,and
+                            </h5>
+                            <h5>
+                                all the joy you bring to others!
+                            </h5>
+                        </div>
+                        <span id="typed" style="white-space:pre;"></span>
+                    </div>
+                </div>
+
+                <div class="col-12 col-xl-3 cake" >
+                    <img src="img/cake.gif" alt="">
+                </div>
+
+            </div>
+        </div>
+        <img src="img/Balloon-Border.png" width="100%" class="balloon-border">
+
+    </div>
+    <div CLASS="FALTU">
+        <p class="scroll-down">SCROLL DOWN BRO</p>
+
+    </div>
+    <div class="videopart">
+        <video src="Suhani video final.mp4" class="video1" muted></video> 
+        <video src="suhanipart2.mp4" class = "video2" muted></video>
+    </div>
+    <div class="part4">
+        <p>
+            Hover on Letters
+        </p>
+    </div>
+    <div class="name-container">
+
+        <span class="letter" data-tooltip="Sweet (Maska lagane me Expert)">S</span>
+        <span class="letter" data-tooltip="Understanding++">U</span>
+        <span class="letter" data-tooltip="Hasya padarth">H</span>
+        <span class="letter" data-tooltip="dadi ki AAGYAKARI ">A</span>
+        <span class="letter nalayak" data-tooltip="(N)letter ke layak toh kuch bhi nhi h">N</span>
+        <span class="letter"
+            data-tooltip="Ichadhari Insaan adapt Changes for others&#10;only Depression and Happiness me">I</span>
+
+    </div>
+    <div class="wrapper">
+        <p class="aboutthedata">Kuch baate esi bhi,</p>
+        <!-- Content here -->
+    <p class = "main_content">
+        Bhai mene apni life me kabhi socha bhi nhi tha ki suhani naam ki ladki kya kr rhi hogi like 4th to 10th fir achanak se bekar kismat ho gyi or tu introduce hui The One and only Legendary Suhani is Back . Again as Legendary logo se muje bda drr lgta h (kya matlab muje apne aap se drr lgta h),Finally we are here,pta nhi, pr muje yeh likhte hue bhut acha lg rha h,<br>
+        <p class = "thank">Thank you for,</p> 
+       <ul>
+        <li class = "data">
+            Hr baat me apna gyaan dholne ke liye,<br>pr tere paas koi option nhi dena toh padega.
+        </li>
+        <br>
+
+        <li class = "data">
+            For always listening me with patience.
+        </li>
+       <br>
+
+        <li class = "data">
+          For making such a bond in this short time.
+        </li>
+       </ul>
+    <p class = "final">
+        matlab me kaafi comfortable toh ho hi gya hu obviously,or esa hone ke liye dosti Care,Roasting,Bakwaas se bhari honi chahiye or yeh toh rg rg me zinda h tere.Vese yeh sb likha h voh sb common sense ki baate h pr iske alava dimaag me kuch aa nhi rha h mere,
+         
+    </p>
+      
+       <p class = "once">
+        Once again
+       </p>
+      <div class="both">
+        <div id="staticText">Happy Birthday&nbsp;</div>
+    <div id="typingEffect"></div>
+    
+    
+      </div>
+   
+
+    </p>
+       <p class="final">
+        ek or nya year or bhi opportunities is saal andha chaapna , dadi ki umeedo pe kayam bnke dikhana 😎, or bss tu u hi mst rhe matlab apni sadbudhi se hr chiz se fight kr ske (gyaan me ese de rha hu jese me toh kr chuka hu 🤣).
+        <br>
+
+        <p class = "final" style="margin-bottom: 0px;">
+            Please Note - I am waiting for Financial Independence Day.
+        </p>
+        <p style="font-size: small;margin-top: 0px;color: red;">Jox</p>
+        <p class="final">
+            bss yaar, tu sahi me star toh h dimaag ke chahe kitne bhi lge ho mood at the end mst ho hi jaata h uske liye chahe fir tuje reel bhejni pade yaa bacho ki aavaj nikalni pade yaa UP vaala accent yeh sb me kabhi bhool nhi paunga or time aane pr chidaunga🤣.
+        </p>
+        <p class ="final" style="font-size: xx-large;">
+            All the Best for Your Future . May you become a Real Star for Everyone One Day,<span style="color: #00aab9;"> Like me</span>. 
+        </p>
+        
+       </p> 
+    </div>
+    
+<div class="chappu">
+    <div class="finaltheta"> 
+        <div class="paper heart">
+    
+    </div>
+    
+      
+    <div class="paper image">
+      <p>
+        And Tons Of MEMORIES <br> Loading for the Future <br> so lets see🥲
+
+      </p>
+    </div>
+    
+    <div class="paper image" style="text-align: center;display: flex; flex-direction: column;align-items: center;">
+      <p> First meet up</p>
+      <img src="images\11july.jpg" />
+      <p>
+        11 July 2024
+      </p>
+    </div>
+    
+   
+    
+    
+    
+    <div class="paper red" style="text-align: center;">
+    <p class="p1">Then,Voh Din bhi <br>kya din the</p>
+    <p class="p2">11th april 2024 🤩
+    </p>
+    </div>
+    <div class="paper image" style="text-align: center;display: flex; flex-direction: column;align-items: center;">
+        <p>How can be </p>
+         <p> someone so cute 🤮🤮
+        </p>
+      
+        <img src="images/non sense.jpg" />
+      </div>
+    <div class="paper image" style="display: flex; align-items: center; flex-direction:column;">
+        <img src="images\WhatsApp Image 2024-11-19 at 21.21.52_0cbb6430.jpg
+        " alt="image not available" >
+      <p>
+         4th Class
+      </p>
+    </div>
+    
+    <div class="paper special" style="text-align: center;display: flex; justify-content: center;align-items: center; flex-direction: column;">
+    <p class="p1"
+    >Drag the papers to move!</p>
+    <p class="p1">
+       ( MEMORIES )
+    </p>
+   
+     
+     <!-- >MEMORIES</p> -->
+    </div>
+    </div>
+    
+    
+  
+</div>
+
+<canvas id="bg"></canvas>
+<div class="tatabye" style="display: flex; justify-content: center; margin-bottom: 90px;">
+   <button id="tapToSeeBtn">Tap to see</button>
+  
+</div>
+<div class = "go">
+   <img id="sleepImage" src="img\STK-20240601-WA0001.webp" alt="Gotosleep" style="display: none;">
+</div>
+</body>
+<script>
+    Matter.use('matter-wrap');
+
+let floatyBubbles = {
+    options: {
+        canvasSelector: '#bg',
+        radiusRange: [50, 100],
+        xVarianceRange: [-0.5, 0.5],
+        yVarianceRange: [0.5, 1.5],
+        airFriction: 0.03,
+        opacity: 1,
+        collisions: true,
+        scrollVelocity: 0.025,
+        pixelsPerBody: 50000,
+        colors: ['#e4e4cc', '#e1d2c4', '#d1e4df']
+    },
+
+    scrollDelay: 100,
+    resizeDelay: 400,
+    lastOffset: undefined,
+    scrollTimeout: undefined,
+    resizeTimeout: undefined,
+    engine: undefined,
+    render: undefined,
+    runner: undefined,
+    bodies: undefined,
+
+    init(options) {
+        this.options = Object.assign({}, this.options, options);
+
+        let viewportWidth = document.documentElement.clientWidth;
+        let viewportHeight = document.documentElement.clientHeight;
+
+        this.lastOffset = window.pageYOffset;
+        this.scrollTimeout = null;
+        this.resizeTimeout = null;
+
+        this.engine = Matter.Engine.create();
+        this.engine.world.gravity.y = 0;
+
+        this.render = Matter.Render.create({
+            canvas: document.querySelector(this.options.canvasSelector),
+            engine: this.engine,
+            options: {
+                width: viewportWidth,
+                height: viewportHeight,
+                wireframes: false,
+                background: 'transparent'
+            }
+        });
+        Matter.Render.run(this.render);
+
+        this.runner = Matter.Runner.create();
+        Matter.Runner.run(this.runner, this.engine);
+
+        this.bodies = [];
+        let totalBodies = Math.round(viewportWidth * viewportHeight / this.options.pixelsPerBody);
+        for (let i = 0; i <= totalBodies; i++) {
+            let body = this.createBody(viewportWidth, viewportHeight);
+            this.bodies.push(body);
+        }
+        Matter.World.add(this.engine.world, this.bodies);
+
+        window.addEventListener('scroll', this.onScrollThrottled.bind(this));
+        window.addEventListener('resize', this.onResizeThrottled.bind(this));
+    },
+  
+    shutdown() {
+        Matter.Engine.clear(this.engine);
+        Matter.Render.stop(this.render);
+        Matter.Runner.stop(this.runner);
+
+        window.removeEventListener('scroll', this.onScrollThrottled);
+        window.removeEventListener('resize', this.onResizeThrottled);
+    },
+  
+    randomize(range) {
+        let [min, max] = range;
+        return Math.random() * (max - min) + min;
+    },
+  
+    createBody(viewportWidth, viewportHeight, x = null, y = null) {
+        x = x !== null ? x : this.randomize([0, viewportWidth]);
+        y = y !== null ? y : this.randomize([0, viewportHeight]);
+        let radius = this.randomize(this.options.radiusRange);
+        let color = this.options.colors[this.bodies.length % this.options.colors.length];
+      
+        return Matter.Bodies.circle(x, y, radius, {
+            render: {
+                fillStyle: color,
+                opacity: this.options.opacity
+            },
+            frictionAir: this.options.airFriction,
+            collisionFilter: {
+                group: this.options.collisions ? 1 : -1
+            },
+            plugin: {
+                wrap: {
+                    min: { x: 0, y: 0 },
+                    max: { x: viewportWidth, y: viewportHeight }
+                }
+            }
+        });
+    },
+  
+    onScrollThrottled() {
+        if (!this.scrollTimeout) {
+            this.scrollTimeout = setTimeout(this.onScroll.bind(this), this.scrollDelay);
+        }
+    },
+  
+    onScroll() {
+        this.scrollTimeout = null;
+
+        let delta = (this.lastOffset - window.pageYOffset) * this.options.scrollVelocity;
+        this.bodies.forEach((body) => {
+            Matter.Body.setVelocity(body, {
+                x: body.velocity.x + delta * this.randomize(this.options.xVarianceRange),
+                y: body.velocity.y + delta * this.randomize(this.options.yVarianceRange)
+            });
+        });
+      
+        let viewportWidth = document.documentElement.clientWidth;
+        let viewportHeight = document.documentElement.clientHeight;
+        let scrollHeight = document.documentElement.scrollHeight;
+        let totalBodies = Math.round((viewportWidth * scrollHeight) / this.options.pixelsPerBody);
+        if (this.bodies.length < totalBodies) {
+            let body = this.createBody(viewportWidth, scrollHeight);
+            this.bodies.push(body);
+            Matter.World.add(this.engine.world, body);
+        }
+
+        this.lastOffset = window.pageYOffset;
+    },
+  
+    onResizeThrottled() {
+        if (!this.resizeTimeout) {
+            this.resizeTimeout = setTimeout(this.onResize.bind(this), this.resizeDelay);
+        }
+    },
+  
+    onResize() {
+        this.shutdown();
+        this.init();
+    }
+};
+
+window.addEventListener('DOMContentLoaded', () => {
+    Object.create(floatyBubbles).init({
+        canvasSelector: '#bg'
+    });
+});
+const words = ["Suhani", "Moti", "Choti", "Star"];
+let wordIndex = 0;
+let letterIndex = 0;
+const typingElement = document.getElementById("typingEffect");
+
+function type() {
+    if (letterIndex < words[wordIndex].length) {
+        typingElement.textContent += words[wordIndex].charAt(letterIndex);
+        letterIndex++;
+        setTimeout(type, 150);
+    } else {
+        setTimeout(erase, 800); // Pause before erasing
+    }
+}
+
+function erase() {
+    if (letterIndex > 0) {
+        typingElement.textContent = words[wordIndex].substring(0, letterIndex - 1);
+        letterIndex--;
+        setTimeout(erase, 100);
+    } else {
+        wordIndex = (wordIndex + 1) % words.length; // Move to the next word
+        setTimeout(type, 200); // Start typing the next word
+    }
+}
+
+document.addEventListener("DOMContentLoaded", type)
+    // Confetti Effect Function
+    function createConfetti() {
+        const confettiContainer = document.createElement('div');
+        confettiContainer.classList.add('confetti-container');
+        document.body.appendChild(confettiContainer);
+
+        for (let i = 0; i < 100; i++) {
+            const confetti = document.createElement('div');
+            confetti.classList.add('confetti');
+            confetti.style.left = `${Math.random() * 100}vw`;
+            confetti.style.animationDuration = `${3 + Math.random() * 3}s`;
+            confetti.style.backgroundColor = `hsl(${Math.random() * 360}, 100%, 70%)`;
+            confettiContainer.appendChild(confetti);
+        }
+    }
+
+    // Start confetti on page load
+    window.onload = createConfetti();
+    document.getElementById("tapToSeeBtn").addEventListener("click", function() {
+    const img = document.getElementById("sleepImage");
+    img.style.display = "block";
+    img.style.animation = "fadeIn 1s forwards"; // Apply fade-in animation
+});
+let highestZ = 1;
+
+class Paper {
+  holdingPaper = false;
+  mouseTouchX = 0;
+  mouseTouchY = 0;
+  mouseX = 0;
+  mouseY = 0;
+  prevMouseX = 0;
+  prevMouseY = 0;
+  velX = 0;
+  velY = 0;
+  rotation = Math.random() * 30 - 15;
+  currentPaperX = 0;
+  currentPaperY = 0;
+  rotating = false;
+
+  init(paper) {
+    document.addEventListener('mousemove', (e) => {
+      if(!this.rotating) {
+        this.mouseX = e.clientX;
+        this.mouseY = e.clientY;
+        
+        this.velX = this.mouseX - this.prevMouseX;
+        this.velY = this.mouseY - this.prevMouseY;
+      }
+        
+      const dirX = e.clientX - this.mouseTouchX;
+      const dirY = e.clientY - this.mouseTouchY;
+      const dirLength = Math.sqrt(dirX*dirX+dirY*dirY);
+      const dirNormalizedX = dirX / dirLength;
+      const dirNormalizedY = dirY / dirLength;
+
+      const angle = Math.atan2(dirNormalizedY, dirNormalizedX);
+      let degrees = 180 * angle / Math.PI;
+      degrees = (360 + Math.round(degrees)) % 360;
+      if(this.rotating) {
+        this.rotation = degrees;
+      }
+
+      if(this.holdingPaper) {
+        if(!this.rotating) {
+          this.currentPaperX += this.velX;
+          this.currentPaperY += this.velY;
+        }
+        this.prevMouseX = this.mouseX;
+        this.prevMouseY = this.mouseY;
+
+        paper.style.transform = `translateX(${this.currentPaperX}px) translateY(${this.currentPaperY}px) rotateZ(${this.rotation}deg)`;
+      }
+    })
+
+    paper.addEventListener('mousedown', (e) => {
+      if(this.holdingPaper) return; 
+      this.holdingPaper = true;
+      
+      paper.style.zIndex = highestZ;
+      highestZ += 1;
+      
+      if(e.button === 0) {
+        this.mouseTouchX = this.mouseX;
+        this.mouseTouchY = this.mouseY;
+        this.prevMouseX = this.mouseX;
+        this.prevMouseY = this.mouseY;
+      }
+      if(e.button === 2) {
+        this.rotating = true;
+      }
+    });
+    window.addEventListener('mouseup', () => {
+      this.holdingPaper = false;
+      this.rotating = false;
+    });
+  }
+}
+
+const papers = Array.from(document.querySelectorAll('.paper'));
+
+papers.forEach(paper => {
+  const p = new Paper();
+  p.init(paper);
+});
+
+ </script>
+</script>
+<script src="https://unpkg.com/magic-snowflakes/dist/snowflakes.min.js"></script>
+<script src = "mobile.js"></script>
+<script src="js/jquery.js"></script>
+<script src="js/typed.min.js"></script>
+<script src="js/script.js"></script>
+
+</html>

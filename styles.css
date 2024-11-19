@@ -1,0 +1,101 @@
+/* Basic styles for the page */
+/* Add a gradient and glow animation to each snowflake */
+
+#confetti{
+	
+	height: 100%;
+	left: 0px;
+	position: fixed;
+	top: 0px;
+	width: 100%;
+	z-index: 1;
+}
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-family: 'Arial', sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(to right, #ff9a9e, #fad0c4);
+  
+}
+
+/* Glitter effect */
+.glitter {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.glitter::before {
+  content: '';
+  position: absolute;
+  top: -100%;
+  left: -100%;
+  width: 300%;
+  height: 300%;
+  /* background: url('https://i.imgur.com/YjVxlPm.png') ; */
+  opacity: 0.3;
+  animation: glitter 1.5s infinite linear; /* Animation */
+}
+
+@keyframes glitter {
+  0% {
+      background-position: 0 0;
+  }
+  100% {
+      background-position: 100% 100%;
+  }
+}
+
+/* Password input container */
+.password-container {
+  background: rgba(255, 255, 255, 0.9);
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  z-index: 1; /* Ensure this is above the glitter */
+}
+
+h1 {
+  color: #ff6f61;
+  margin-bottom: 20px;
+}
+
+/* Style for the input box */
+input[type="password"] {
+  padding: 10px;
+  width: 80%;
+  max-width: 300px;
+  border: 2px solid #ff6f61;
+  border-radius: 5px;
+  margin-bottom: 20px;
+  outline: none;
+  text-align: center;
+}
+
+/* Style for the button */
+button {
+  padding: 10px 20px;
+  background-color: #ff6f61;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #e65c55;
+}
+
+/* Hidden content container */
+
