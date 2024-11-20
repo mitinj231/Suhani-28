@@ -655,11 +655,14 @@ background-color: #ff1493; /* Darker pink on hover */
     transform: scale(1.1);
     box-shadow: 10px 3px 50px 10px #dbf3f5;
 }
-.paper:hover{
+.paper {
+    transition: all 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+.paper:hover {
     background-color: #ff1493; /* Darker pink on hover */
     transform: scale(1.1);
     box-shadow: 10px 3px 50px 10px #dbf3f5;
-    /* transition: box-shadow (0.075, 0.82, 0.165, 1); */
 }
 .data121{
     color: white;
