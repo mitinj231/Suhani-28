@@ -6,9 +6,169 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="style.css">
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons|Material+Icons+Outlined|Material+Icons+Round|Material+Icons+Sharp|Material+Icons+Two+Tone"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Foldit:wght@100;200;300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
     <style>
-      
-
+       
+      .center {
+        width: 90%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        
+      }
+      .book {
+        width: 400px;
+        height: 400px;
+        position: relative;
+      }
+      .pages {
+        width: 100%;
+        height: 100%;
+        position: relative;
+      }
+      .page {
+        width: 380px;
+        height: 400px;
+        position: absolute;
+        top: 0;
+        left: 0;
+        border-radius: 7mm;
+        margin: 0 6px;
+        transform-style: preserve-3d;
+        transform-origin: left;
+        transition: 0.25s;
+        box-shadow: 1px 2px 0 0 rgba(0, 0, 0, 0.15),
+          1px 3px 1px 0 rgba(0, 0, 0, 0.1);
+      }
+      .page-side {
+        width: 100%;
+        height: 100%;
+        box-sizing: border-box;
+        padding: 20px 30px;
+        display: flex;
+        align-items: flex-start;
+        justify-content: center;
+        flex-direction: column;
+        font-family: poppins;
+        border-radius: 7mm;
+        position: absolute;
+        top: 0;
+        left: 0;
+        backface-visibility: hidden;
+      }
+      .page-head {
+        width: 100%;
+      }
+      .page-title {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        font-size: 40px;
+        font-weight: 500;
+      }
+      .page-subtitle {
+        font-size: 12px;
+        font-weight: 300;
+      }
+      .page-content {
+        /* flex-grow: 1; */
+        font-size: 14px;
+        /* display: flex;
+        align-items: flex-end; */
+       
+      }
+      .page-footer {
+        width: 100%;
+       
+        display: flex;
+        align-items: flex-end;
+        justify-content: flex-end;
+        
+        /* margin-top: 50px; */
+        font-size: 14px;
+        /* align-items: flex-end; */
+      }
+      .pg-no {
+        width: 14px;
+        padding: 0 15px;
+        height: 20px;
+        line-height: 20px;
+        /* text-align: center; */
+        color: rgb(40, 40, 40);
+        background: white;
+        border-radius: 3mm;
+        position: relative;
+        top: 90%;
+        right: 0%;
+        margin-left: 200px;
+      }
+      .front {
+        background: rgb(194, 250, 255);
+        color: rgb(40, 40, 40);
+        padding-left: 40px;
+        
+      }
+      .frontchange{
+        background-image: url("https://tse4.mm.bing.net/th?id=OIP.ZwjJbW7U1WqVwrxeCqHlUQHaE8&pid=Api&P=0&h=180");
+        color: white;
+      }
+      .back {
+        background: rgb(40, 40, 40);
+        color: white;
+        padding-right: 40px;
+        transform: rotateY(180deg);
+      }
+      .beads {
+        position: absolute;
+        top: 0;
+        left: -12px;
+        height: 270px;
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+        flex-direction: column;
+        z-index: 9999;
+      }
+      .bead {
+        width: 36px;
+        height: 12px;
+        background: white;
+        border-radius: 5mm;
+        z-index: 9999;
+        box-shadow: inset 1px 2px 0 0 rgba(0, 0, 0, 0.15),
+          inset 1px 3px 1px 0 rgba(0, 0, 0, 0.1);
+      }
+      .controls {
+        width: 350px;
+        height: fit-content;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+      .controls button {
+        background: white;
+        width: 40px;
+        height: 40px;
+        border: 0.4mm solid rgb(40, 40, 40);
+        border-radius: 50%;
+        outline: none;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+      }
       
 
         .wrapper {
@@ -471,18 +631,41 @@ max-height: 250px;
 
     .chappu{
     display: none;
-    background-color: red;
+    /* background-color: red; */
 }
 
+
+}
+@media (min-width:751px) {
+
+    .center{
+    display: none;
+    background-color: red;
 }
 .special{
 padding: 30px 50px 50px 40px;
 text-align: center;
     background-image: url("https://i.pinimg.com/originals/72/b2/4f/72b24f7c9fb377bb8807d46df78228ce.jpg");
 }
-
-
-
+.special:hover{
+/* padding: 35px 55px 55px 45px; */
+background-color: #ff1493; /* Darker pink on hover */
+transform: scale(1.05);
+background-color: #ff1493; /* Darker pink on hover */
+    transform: scale(1.1);
+    box-shadow: 10px 3px 50px 10px #dbf3f5;
+}
+.paper:hover{
+    background-color: #ff1493; /* Darker pink on hover */
+    transform: scale(1.1);
+    box-shadow: 10px 3px 50px 10px #dbf3f5;
+    /* transition: box-shadow (0.075, 0.82, 0.165, 1); */
+}
+.data121{
+    color: white;
+    font-family: cursive;
+    font-size: larger;
+}
 
 
     </style>
@@ -653,7 +836,7 @@ text-align: center;
     
     <div class="paper image" style="text-align: center;display: flex; flex-direction: column;align-items: center;">
       <p> First meet up</p>
-      <img src="images\11july.jpg" />
+      <img src="images/11july.jpg" />
       <p>
         11 July 2024
       </p>
@@ -698,7 +881,215 @@ text-align: center;
     
   
 </div>
+<div class="center">
+    <div class="book">
+      <div class="pages">
+        <div class="beads">
+          <div class="bead"></div>
+          <div class="bead"></div>
+          <div class="bead"></div>
+          <div class="bead"></div>
+        </div>
 
+        <div class="page active">
+          <div class="page-side front">
+            <div class="page-head">
+              <p style="color: #92e3f8; font-size:4rem;">
+                MEMORIES</p>
+                <div class="page-footer" style="position: relative; top: 90%;">
+                    <span class="pg-no">1</span></div>
+              
+            </div>
+          </div>
+
+          <div class="page-side back">
+            <div class="page-head">
+              <div class="page-title">
+                Movies
+                
+              </div>
+              <div class="page-subtitle">Client Name</div>
+            </div>
+       
+          </div>
+        </div>
+        <div class="page">
+          <div class="page-side  frontchange"
+         >
+            <div class="page-head">
+              <div class="page-title" style="color: white;">
+                4th Class
+              </div>
+              
+            </div>
+            <div class="page-content" style="display: flex; justify-content: center;">
+              <img src="images/WhatsApp Image 2024-11-19 at 21.21.52_0cbb6430.jpg" alt="Image not available" style="width:90%" >
+            </div>
+            <div class="page-footer">
+              
+              <span class="pg-no">2</span>
+            </div>
+          </div>
+          <div class="page-side back">
+            <div class="page-head">
+              <div class="page-title">
+           
+                
+              </div>
+              <div class="page-subtitle">Client Name</div>
+            </div>
+            <div class="page-content" style="opacity: 0.5;">
+                <img src="images/WhatsApp Image 2024-11-19 at 21.21.52_0cbb6430.jpg" alt="image not available">
+            </div>
+            <div class="page-footer">
+              <span>May 2023</span>
+              
+            </div>
+          </div>
+        </div>
+        <div class="page">
+          <div class="page-side front " style="background-image: linear-gradient(135deg, #FF8080, #FFFFFF);">
+            <div class="page-head">
+              <div class="page-title" style="font-size: x-large; font-weight: bold; font-family: cursive; color: white;">
+                How can be someone So Cute 🤮🤮
+     
+              </div>
+            
+            </div>
+            <div class="page-content" style="display: flex; justify-content: center; margin-left: 60px;">
+             <img src="images/non sense.jpg" alt="image not available" style="height: 250px; border: 8px double rgb(247, 0, 255); ">
+            </div>
+            <div class="page-footer">
+              
+              <span class="pg-no">3</span>
+            </div>
+          </div>
+          <div class="page-side back">
+            <div class="page-head">
+              <div class="page-title">
+                Education
+                <span class="material-icons-outlined"> school </span>
+              </div>
+              <div class="page-subtitle">Client Name</div>
+            </div>
+            <div class="page-content">
+             
+            </div>
+            <div class="page-footer">
+              <span>May 2023</span>
+              <span class="pg-no">6</span>
+            </div>
+          </div>
+          
+
+          
+        </div>
+        <div class="page active">
+          <div class="page-side front" style= "background-color:#ff69b4">
+            <div class="page-head">
+              <p style="color: #ffffff; font-size:2rem; font-family: cursive; text-align: center;">
+                Then,Voh din bhi Kya Din the</p>
+                <p style="color: #f7d1ff; font-size:3rem; text-align: center; font-family: cursive;">
+                   11 April 2024 </p>
+                <div class="page-footer" style="position: relative; top:40%;">
+                    <span class="pg-no">4</span></div>
+              
+            </div>
+          </div>
+
+          <div class="page-side back">
+            <div class="page-head">
+              <div class="page-title">
+                Movies
+              </div>
+            </div>
+          </div>
+
+          
+        </div>
+          
+        <div class="page active">
+          <div class="page-side front" style="background-image: linear-gradient(315deg, #4D96FF, #FFFFFF);">
+            <div class="page-head">
+              <img src="images/11july.jpg" alt="image not available">
+              <div style="color: rgb(255, 255, 255); font-size: xx-large; text-align: center; font-family: cursive;">
+                First meet up <br> 11 July 2024</div>
+                <div class="page-footer" style="position: relative; top: 7%;">
+                    <span class="pg-no">5</span></div>
+              
+            </div>
+          </div>
+
+          <div class="page-side back">
+            <div class="page-head">
+              <div class="page-title">
+                
+                
+              </div>
+              
+            </div>
+       
+          </div>
+        </div>
+
+
+
+    
+        <div class="page active">
+          <div class="page-side front" style="background-image: linear-gradient(315deg, #FFD36E, #FFFFFF, #FFD36E);">
+            <div class="page-head">
+           <img src="images/heart.webp" alt="image nah h">
+                <div class="page-footer" style="position: relative; top: 28%;">
+                    <span class="pg-no">6</span></div>
+              
+            </div>
+          </div>
+
+          <div class="page-side back">
+            <div class="page-head">
+              <div class="page-title">
+                Movies
+                
+              </div>
+              <div class="page-subtitle">Client Name</div>
+            </div>
+       
+          </div>
+        </div>
+        <div class="page active">
+          <div class="page-side front">
+            <div class="page-head">
+              <p style="color: #92e3f8; font-size:2rem; text-align: center;">
+                And Tons Of MEMORIES <br> Loading for the Future <br> so lets see🥲</p>
+                <div class="page-footer" style="position: relative; top: 20%;">
+                    <span class="pg-no">7</span></div>
+              
+            </div>
+          </div>
+
+          <div class="page-side back">
+            <div class="page-head">
+              <div class="page-title">
+                Movies
+                
+              </div>
+              /* <div class="page-subtitle">Client Name</div> */
+            </div>
+       
+          </div>
+        </div>
+      </div>
+      
+    </div>
+    <div class="controls">
+      <button type="button" class="btn" onclick="previous()">
+        <span class="material-icons-outlined">arrow_back</span>
+      </button>
+      <button type="button" class="btn" onclick="next()">
+        <span class="material-icons-outlined">arrow_forward</span>
+      </button>
+    </div>
+  </div>
 <canvas id="bg"></canvas>
 <div class="tatabye" style="display: flex; justify-content: center; margin-bottom: 90px;">
    <button id="tapToSeeBtn">Tap to see</button>
@@ -708,7 +1099,41 @@ text-align: center;
    <img id="sleepImage" src="img\STK-20240601-WA0001.webp" alt="Gotosleep" style="display: none;">
 </div>
 </body>
+
 <script>
+    function setIndex() {
+        let pages = document.querySelectorAll(".page");
+        for (var i = 0; i < pages.length; i++) {
+          pages[i].style.zIndex = pages.length - i;
+        }
+      }
+
+      setIndex();
+
+      function previous() {
+        let active = document.querySelector(".active");
+        let prevSib = active.previousElementSibling;
+        active.className = "page";
+        prevSib.className = "page active";
+        setIndex();
+        prevSib.style.transform = "rotateY(0deg)";
+        let prevSib2 = prevSib.previousElementSibling;
+        if (prevSib2 && prevSib2.className == "page") {
+          prevSib2.style.zIndex = "9998";
+        }
+      }
+
+      function next() {
+        let active = document.querySelector(".active");
+        let nextSib = active.nextElementSibling;
+        active.style.transform = "rotateY(180deg)";
+        active.className = "page";
+        setIndex();
+        active.style.zIndex = "9998";
+        if (nextSib) {
+          nextSib.className = "page active";
+        }
+      }
     Matter.use('matter-wrap');
 
 let floatyBubbles = {
