@@ -630,6 +630,17 @@ max-height: 250px;
   background-repeat: no-repeat;
   opacity: 0.6;
 }
+.zoomingit{
+  width: 100%;
+    transition: transform 0.3s ease; /* Smooth zoom effect */
+  }
+
+ 
+  @media (max-width: 600px) {
+    .balloon-border {
+      transform: scale(2.5); /* Adjust zoom level (1.2 means 20% bigger) */
+    }
+  }
 
 .finaltheta p {
   font-family:cursive;
@@ -756,7 +767,7 @@ background-color: red;
 
             </div>
         </div>
-        <img src="img/Balloon-Border.png" width="100%" class="balloon-border">
+        <img src="img/Balloon-Border.png" width="100%" class="balloon-border zoomingit">
 
     </div>
     <div CLASS="FALTU">
