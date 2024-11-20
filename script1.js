@@ -9,7 +9,7 @@ function checkPassword() {
             window.location.href = 'message.html'; // Redirect to the message page
         }, 0);
     } else {
-        alert("Incorrect password. Please try again.");
+        alert("Chashma lagakar bhi Incorrect password");
     }
 }
 
