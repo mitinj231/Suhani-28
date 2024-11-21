@@ -23,7 +23,7 @@
     width: 100%;
     height: 100%;
     z-index: 999;
-    background: url(img/final\ sticker.png) center no-repeat #ffcfcf;
+    background: url("img/final sticker.png") center no-repeat #ffcfcf;
     background-position-x: center;
     background-position-y: top;
     background-size: auto 60vh; 
