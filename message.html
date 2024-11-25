@@ -327,7 +327,7 @@
         .letter:hover {
             transform: scale(1.2) rotate(5deg);
             /* Slight rotation */
-            filter: drop-shadow(0 0 10px #ffd700) drop-shadow(0 0 20px #ff6347);
+            filter: drop-shadow(0 0 10px #f5e1e1) drop-shadow(0 0 20px #ffffff);
             /* Enhanced sparkle */
         }
 
@@ -350,9 +350,25 @@
             transform: translateX(-50%);
             padding: 10px;
             font-size: 2vw;
-            background-image: radial-gradient( circle 918px at 13.1% 25.5%,  rgba(249,107,107,1) 0%, rgba(247,231,172,1) 48.9%, rgba(173,247,172,1) 90% );
-color:rgb(255, 255, 255);
+            content: attr(data-tooltip);
+            /* Display the tooltip text */
+            position: absolute;
+            top: -80px;
+            left: 50%;
+            transform: translateX(-50%);
+            padding: 10px;
+            font-size: 2vw;
+            background: linear-gradient(135deg, #ff7eb3, #ff758c, #ff477e);
+color: #ffffff;
 
+            border-radius: 8px;
+            opacity: 0;
+            transition: opacity 0.3s ease, top 0.3s ease;
+            white-space: pre-wrap;
+            /* Allows line breaks */
+            pointer-events: none;
+            box-shadow: 0 0 8px rgba(253, 133, 255, 0.6);
+            color: #ffffff;
             border-radius: 8px;
             opacity: 0;
             transition: opacity 0.3s ease, top 0.3s ease;
